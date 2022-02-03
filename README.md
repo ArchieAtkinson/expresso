@@ -26,14 +26,6 @@ I plan to expand this project over time to cover more us cases and platforms. Fe
 
 ## Notes:
 
-TODO:
-Add (^ fail to bracket checker
-Add bracket detection to ^ split code
-
-Bracket and Indices will have to be done recursively 
-
-BIDMAS 
-
 Brackets        ()
 Indices         ^
 Divide          /
@@ -41,5 +33,39 @@ Multiplication  *
 Add             +
 Sub             - 
 
-negatives       -1
-positive        +1 or 1
+[Recursive Descent Parsing](https://www.youtube.com/watch?v=SToUyjAsaFk)
+
+ID - Variables
+Numbers
+Infix Operators + - * / (Goes in-between)
+Prefix Operators + - (Goes before)
+Parens
+Postfix Operators ! (Goes after)
+
+Precedents and Associativity
+
+Grammar:
+
+Non Terminal (Grammar Symbols)
+Terminal (Tokens, Lexical Symbols) - Written in bold
+
+E = Expression
+F = Factor
+T = Term
+
+E -> T + E
+  -> T - E
+  -> T
+T -> T * F
+  -> T / F
+  -> F
+F -> (E)
+  -> E
+  -> int
+
+{} = one or more
+
+ID = char{char} 
+Integers = digit{digit}
+
+Lexer , takes input and converts to Tokens

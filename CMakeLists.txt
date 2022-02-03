@@ -11,10 +11,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Source
 # It is recommanded to manually add source files vs GOB
 set(SOURCES_APP 
-src/parse.cpp
+src/lexer.cpp
 )
 set(HEADERS_APP 
-inc/parse.hpp
+inc/lexer.hpp
 )
 set(APP_LIB app)
 add_library (${APP_LIB} ${SOURCES_APP} ${HEADERS_APP})
@@ -38,7 +38,7 @@ FetchContent_MakeAvailable(Catch2)
 enable_testing()
 set(TESTS_NAME test_exe)
 set(SOURCES_TEST
-tests/t_parse.cpp
+tests/t_lexer.cpp
 )
 add_executable(${TESTS_NAME} ${SOURCES_TEST})
 target_link_libraries(${TESTS_NAME} 
